@@ -93,6 +93,9 @@ export async function getNetworks (): Promise<ChainWithGsn[]> {
       // less aggressive in throttling RPC calls
       chainList[10].rpc = ['https://rpc.ankr.com/optimism']
     }
+    if (chainList[80001] !== undefined) {
+      chainList[80001].rpc = ['https://rpc-mumbai.maticvigil.com']
+    }
   }
 
   const availableChains = Object.keys(gsnNetworks).reduce<ChainWithGsn[]>((set, chainId) => {
